@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>{{title}} - T.F LAP</title>
+
+        <script src="/file/js/main.js"></script>
+        <script>load('project.css');</script>
+
+        <link type="text/css" rel="stylesheet" href="/file/css/project2.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/content-styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/file/js/project.js"></script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/login">Login</a>
+
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/projects">Projects</a> <a>></a> <a style="margin:0" class="sub_title" href="">{{title}}</a>
+            <div class="project_item">
+                <h1 class="project_title">{{title}}</h1>
+                <hr>
+                <a class="login" href="/member/{{author[0]}}">{{author[1]}}</a>
+                <div class="project_item_in ck-content load">{{html}}</div>
+            </div>
+        </div>
+    </body>
+</html>

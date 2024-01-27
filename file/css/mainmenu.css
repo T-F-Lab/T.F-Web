@@ -1,0 +1,154 @@
+ul > li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+ul {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: none;
+    white-space: nowrap;
+}
+
+@keyframes projects_hover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes projects_hover_reverse {
+    to {
+        transform: scale(1);
+    }
+    from {
+        transform: scale(0.9);
+    }
+}
+
+.projects {
+    padding-top: 5vh;
+    white-space: nowrap;
+    min-height: 32.5vw;
+}
+
+.projects_item {
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1.6vw;
+    background-color: rgb(40,35,40);
+    width: auto;
+    max-height: 25vw;
+
+
+
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 3vw;
+    margin-bottom: 1vw;
+    padding: 0.6vw;
+
+    position: static;
+
+    animation-name: projects_hover_reverse;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+
+    aspect-ratio: 16 / 9;
+}
+
+.projects_item:hover {
+    transform: scale(0.9);
+
+    animation-name: projects_hover;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+    cursor: pointer;
+}
+
+.projects_item img {
+    max-height: 22vw;
+    border-radius: 1vw;
+
+}
+
+
+.wiki {
+    margin-top: 3vh;
+}
+.wiki_sub {
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    padding: 1vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.members_item {
+    width: max(15vw, 130px);
+    border: 1px solid rgb(40,35,40);
+    background-color: rgb(40,35,40);
+    border-radius: 1.6vw;
+    padding: 0.6vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+
+    animation-name: projects_hover_reverse;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+}
+
+.members_item:hover {
+    transform: scale(0.9);
+
+    animation-name: projects_hover;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+}
+
+.members_item img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 1vw;
+}
+
+.members_item:hover {
+    cursor: pointer;
+}
+
+.timeline_item {
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 1vw;
+    margin-bottom: 1vh;
+}
+
+.timeline_time {
+    width: 10%;
+    display: inline;
+}
+
+.timeline_text {
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+}
+
+.user {
+    position: fixed;
+    width: 4vw;
+    height: 4vw;
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+}
+
+.user_img {
+    width: 100%;
+}

@@ -1,0 +1,43 @@
+.member {
+}
+
+.main_img {
+    width: 50%;
+    margin-top: 2vw;
+    border-radius: 2vw;
+    display: inline-block;
+}
+.member_title {
+    text-align: center;
+    width: 50%;
+    float: right;
+    position: relative;
+    top: 0;
+}
+
+p {
+    padding: 1vw;
+    display: inline-block;
+    word-wrap: break-word;
+    margin-top: 0;
+    max-height: 18vw;
+    overflow-y: auto;
+    white-space: nowrap;
+    font-size: 2vw;
+    direction: ltr;
+    text-align:justify;
+    word-break: break-word;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.member_title_h {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}

@@ -1,0 +1,65 @@
+.file_drag_drop {
+    width: 47vw;
+    height: 50vh;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    border: 0.5vw dotted rgb(50,45,50);
+    background: transparent;
+    z-index: 8;
+
+    float-left;
+}
+
+.panel_in {
+    margin-top: 2vw;
+}
+
+.file_list {
+    width: 47vw;
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(60,55,60);
+    display: inline-block;
+    margin:0;
+}
+
+.listFile_x {
+    float: left;
+    width: 2vw;
+    margin: 0;
+    background-color: rgb(80,75,80);
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.listFile p {
+    width: auto;
+    overflow-x: auto;
+}
+
+.listFile {
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    min-height: 2vw;
+}
+
+.submit {
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    cursor: pointer;
+    margin-top: 1vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.t {
+    font-size: 2vw;
+    margin:0;
+    width: 100%;
+    display: block;
+    text-align: center;
+}

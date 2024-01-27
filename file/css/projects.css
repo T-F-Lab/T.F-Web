@@ -1,0 +1,156 @@
+.projects_item {
+    width: 90vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    cursor: pointer;
+    margin-top: 1vw;
+    border: 1px solid rgb(40,35,40);
+    background-color: rgb(40,35,40);
+    border-radius: 1vw;
+
+    font-size: max(2vw,20px);
+
+    animation-name: p_item_hover_reverse;
+    animation-duration: 0.2s;
+    animation-direction: leaner;
+
+    display: flex;
+    align-items: center;
+}
+
+@keyframes p_item_hover {
+    from {
+        width: 90vw;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        padding-left: 0;
+    }
+    to {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: 92vw;
+        padding-left: 1vw;
+    }
+}
+@keyframes p_item_hover_reverse {
+    to {
+        width: 90vw;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        padding-left: 0;
+    }
+    from {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: 92vw;
+        padding-left: 1vw;
+    }
+}
+
+.projects_item:hover {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width: 92vw;
+    padding-left: 1vw;
+
+    animation-name: p_item_hover;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+}
+
+.p_author {
+    display: inline-block;
+    width: 10vw;
+}
+.p_time {
+    display: inline-block;
+    width: 5vw;
+}
+
+.p_title {
+    width: 60vw;
+    text-align: center;
+
+    display: inline-block;
+}
+
+.p_img_p{
+    width: 2vw;
+    position: relative;
+    margin-left: -2.6vw;
+    margin-top: 2.6vw;
+
+    border: 1px solid rgb(255,255,255);
+    border-radius: 1vw;
+    background-color: rgb(255,255,255);
+}
+
+.p_img {
+    height: 5vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+
+    animation-name: p_img_hover_reverse;
+    animation-duration: 0.25s;
+    animation-direction: leaner;
+}
+
+.p_img_hover {
+    position: absolute;
+    width: 5vw;
+    min-width: 10vw;
+    height: 2.8125vw;
+    min-height: 5vw;
+    display: block;
+    z-index: 7;
+}
+
+.p_img_hover:hover ~ .p_img {
+    transform-origin: center left;
+    transform: scale(3);
+
+    border-radius: 0;
+
+    animation-name: p_img_hover;
+    animation-duration: 0.5s;
+    animation-direction: leaner;
+}
+
+.p_img_hover:hover ~ .p_img_p {
+    visibility: hidden;
+}
+
+@keyframes p_img_hover {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        border-radius: 1vw;
+    }
+    to {
+        transform: scale(3);
+        transform-origin: center left;
+        border-radius: 0;
+    }
+}
+@keyframes p_img_hover_reverse {
+    to {
+        transform: scale(1);
+        transform-origin: center center;
+        border-radius: 1vw;
+    }
+    from {
+        transform: scale(3);
+        transform-origin: center left;
+        border-radius: 0;
+    }
+}
+
+@keyframes p_img_loder {
+    from {
+        alpha: 0;
+    }
+
+    to {
+        alpha: 1;
+    }
+}

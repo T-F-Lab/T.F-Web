@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>{{member[1]}} - T.F LAP</title>
+
+        <script src="/file/js/main.js"></script>
+        <script>load('member.css');</script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/file/js/member_load.js"></script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/login">Login</a>
+
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/member">Member</a> <a>></a> <a style="margin:0" class="sub_title" href="/member/{{int(member[0])}}">{{member[1]}}</a>
+            <br>
+            <div class="member">
+                <img class="main_img" src="/file/img/{{member[5]}}" />
+                <div class="member_title">
+                    <h1 class="member_title_h">{{member[1]}}</h1>
+                    <hr>
+                    <div class="member_text">
+                        <p>{{member[3]}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <a class="sub_title">Projects</a>
+
+        </div>
+    </body>
+</html>

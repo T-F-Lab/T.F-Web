@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Projects - T.F LAP</title>
+
+        <script src="/file/js/main.js"></script>
+        <script>load('projects.css');</script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/login">Login</a>
+
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/projects">Projects</a>
+
+            {% if len <= 0 %}
+            <h3 class="non_object">프로젝트가 없습니다.</h3>
+            {% endif %}
+
+            {% for i in projects %}
+
+            <div class="projects_item" onclick="location.href = '/project/{{int(i[0])}}'">
+                <div class="p_img_hover"></div>
+                <img class="p_img" id="p_img" src="{{i[4]}}" onerror="this.src='/file/img/none.png'">
+                <img class="p_img_p" src="/file/img/expand_content.svg">
+                <a class="p_title">{{i[1]}}</a>
+                <a class="p_author">{{i[2]}}</a>
+                <a class="p_time">{{i[3]}}</a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </body>
+</html>

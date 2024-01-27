@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Upload Categories - T.F LAP</title>
+
+        <link type="text/css" rel="stylesheet" href="/file/css/main.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/upload_categories.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/sign-in">Sign - in</a>
+
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload">Upload</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload/categorys">Categorys</a>
+
+            <div class="category_list">
+
+                {% if no %}
+                <h3 class="non_object">카테고리가 없습니다.</h3>
+                {% endif %}
+
+                {% for i in categories %}
+
+
+                <div class="category_ ct">
+                    <div class="category_item ct" style="background-color: rgb({{ i[6].replace('[','').replace(']','')}}); background: linear-gradient(160deg, rgba(100,100,100,0.8) 0%, rgb({{ i[6].replace('[','').replace(']','')}}) 100%);">
+                        <p class="ct">{{i[1]}}</p>
+
+                        <div class="edit input">
+                            <input class="title input" type="text" value="{{i[1]}}" placeholder="{{i[1]}}">
+                            <input class="color input" type="text" value="{{i[6].replace('[','').replace(']','').replace(' ','').replace(',',', ')}}" placeholder="{{i[6].replace('[','').replace(']','').replace(' ','').replace(',',', ')}}">
+                            <div class="submit input" data-id="{{i[0]}}"><p data-id="{{i[0]}}" class="input">수정</p></div>
+                        </div>
+
+                    </div>
+                    <div class="category_item_hover ct">
+                        <p class="dec ct">{{i[2]}}</p>
+                        <div class="edit input">
+                            <input class="title input dec_" type="text" value="{{i[2]}}" placeholder="{{i[2]}}">
+                        </div>
+                    </div>
+                </div>
+
+
+                {% endfor %}
+            </div>
+
+            <script src="/file/js/upload_categories.js"></script>
+
+        </div>
+    </body>
+</html>

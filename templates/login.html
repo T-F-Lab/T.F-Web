@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Login - T.F LAP</title>
+        <script src="/file/js/main.js"></script>
+        <script>load('login.css');</script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/sign-in">Sign - in</a>
+
+        <div class="login_panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/login">Login</a>
+
+            <div class="login_form">
+
+                <h2 id="login_title">Login</h2>
+
+                <form method="post" action="/login">
+                    <input type="text" placeholder="ID" name="id" id="id">
+                    <input type="password" placeholder="PW" name="pw" id="pw">
+
+                    <input class="login_submit" type="submit" value="Login">
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

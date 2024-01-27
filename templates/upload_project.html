@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Upload Project - T.F LAP</title>
+
+        <link type="text/css" rel="stylesheet" href="/file/css/main.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/project.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/projects.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/upload_project.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/file/ckeditor/5/40/2/0/ckeditor.js"></script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/login">Login</a>
+        <div class="project">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload">Upload</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload/project">Project</a>
+
+            <div class="projects_item">
+                <div class="p_img_hover"></div>
+                <img class="p_img" id="p_img" src="">
+                <img class="p_img_p" src="/file/img/expand_content.svg">
+                <a class="p_title">제목을 입력해 주세요.</a>
+                <a class="p_author">You</a>
+                <a class="p_time">Now</a>
+            </div>
+            <div class="image_upload">
+                <h3>사진/파일 업로드</h3>
+            </div>
+            <div class="image_uploader">
+                <div class="image_uploader_in">
+                    <h3 class="img_u_title">파일 업로더 <input class="window1" type="checkbox" value="window1"> <label>창 계속 열림</label></h3>
+                    <hr class="img_hr">
+                    <div class="file_drag_drop">
+                        <p style="margin:0; dislay:none;">여기에 이미지/파일을 Drop</p>
+                    </div>
+                    <div class="file_select">
+                        <!--<input style="display: inline;" id="file" type="file"> -->
+                        <button class="submit">업로드</button>
+                        <div class="file_list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="/file/js/drag_and_drop.js"></script>
+
+            <div class="image_insert">
+                <h3>삽입</h3>
+            </div>
+            <div class="image_inserter">
+                <div class="image_inserter_in">
+                    <h3 class="img_u_title">삽입 <img class="refresh" src="/file/img/refresh.svg"></h3>
+                    <hr class="img_hr">
+                    <div class="insert_files">
+                        <p class="no_file">업로드한 사진이나 파일이 없습니다.<br>업로드 후 오른쪽 상단<img style="border-radius:1vw;background-color:rgb(255,255,255);" src="/file/img/refresh.svg"> 버튼을 눌러 새로고침 해주세요.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>카테고리</h3>
+            </div>
+
+            <div class="category_frame">
+                <div class="category_frame_in">
+                    <h3 class="img_u_title">카테고리 <img class="refresh_c" src="/file/img/refresh.svg"></h3>
+                    <hr class="img_hr">
+                    <div class="categories">
+                        <p class="no_file">불러온 카테고리가 없습니다.<br>업로드 후 오른쪽 상단<img style="border-radius:1vw;background-color:rgb(255,255,255);" src="/file/img/refresh.svg"> 버튼을 눌러 새로고침 해주세요.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="project_upload">
+                <h3>글 업로드</h3>
+            </div>
+
+            <script src="/file/js/refresh_files.js"></script>
+
+
+            <div class="category_" data-category=""></div>
+
+
+            <div id="toolbar-container"></div>
+
+            <div class="project_item">
+                <input class="title_input" type="text" placeholder="여기에 제목을 입력하세요.">
+                <hr>
+                <a class="login">You</a>
+                <div id="editor"></div>
+            </div>
+
+            <script src="/file/js/upload_project.js"></script>
+        </div>
+
+        <script src="/file/js/upload_project_c.js"></script>
+
+        {% if edit %}
+        <script>
+            $('.title_input').val('{{msg['title']}}');
+            $('.p_title').text($('.title_input').val());
+            $('.p_img').attr('src','{{msg['img']}}');
+            setData($('<div />').html('{{msg['html']}}').text());
+
+            $.getJSON('/upload/get/category?id={{msg['category']}}',function(data){
+                if (data != null){
+                    var p = '<p>'+data[1]+'</p>';
+                    $('.category_').children().remove();
+                    $('.category_').attr('data-category',data[0]);
+                    $('.category_').append(p);
+                }
+            });
+
+            $('.project_upload').html('<h3>글 수정</h3>');
+            $('.project_upload').attr('data-edit', true);
+
+
+        </script>
+        {% endif %}
+</html>

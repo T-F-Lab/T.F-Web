@@ -1,0 +1,27 @@
+.project_item {
+    margin-top: 5vh;
+    margin-left: 15.5vw;
+    width: 65vw;
+    border: 1px solid rgb(40,35,40);
+    background-color: rgb(40,35,40);
+    border-radius: 2vw;
+    min-height: 80vh;
+    padding: 0;
+}
+
+.project_title {
+    text-align: center;
+    margin: 1vw;
+}
+
+.project_item_in{
+    width: calc(65vw-.6em);
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: .6em;
+    padding-right: .6em;
+}
+
+.load {
+    color: transparent;
+}

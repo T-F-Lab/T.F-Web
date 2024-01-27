@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Upload - T.F LAP</title>
+
+        <link type="text/css" rel="stylesheet" href="/file/css/main.css">
+        <link type="text/css" rel="stylesheet" href="/file/css/uploads.css">
+
+        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/decoupled-document/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/translations/ko.js"></script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/login">Login</a>
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload">Upload</a>
+            <div class="list">
+                <div class="item" style="left: 3vw;">
+                    <h2>Projects</h2>
+                    <hr>
+
+                    <div class="button" onclick="location.href = '/upload/project'">프로젝트 업로드</div>
+                    <div class="button" onclick="location.href = '/upload/edit_project'">프로젝트 수정/관리</div>
+                    <div class="button" onclick="location.href = '/upload/categories'">카테고리 관리</div>
+
+                </div>
+                <div class="item" style="left: 35vw">
+                    <h2>IMG / FILE</h2>
+                    <hr>
+
+                    <div class="button" onclick="location.href = '/upload/files'">이미지/파일 업로드</div>
+                    <div class="button">이미지/파일 관리</div>
+                </div>
+                <div class="item" style="left: 67vw">
+                    <h2>Member</h2>
+                    <hr>
+
+                    <div class="button" onclick="location.href = '/upload/member'">멤버 추가 (운영자)</div>
+                    <div class="button">멤버 수정 (운영자/본인)</div>
+                    <div class="button">운영자 관리 (운영자)</div>
+                    <div class="button" onclick="location.href = '/upload/password'">비밀번호 변경 (운영자/본인)</div>
+                    <div class="button" onclick="location.href = '/logout'">로그아웃</div>
+                </div>
+            </div>
+        </div>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>T.F LAP</title>
+        <script src="/file/js/main.js"></script>
+        <script>load('mainmenu.css');</script>
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="login">Login</a>
+
+        {% if user != None %}
+        <div class="user" onclick="location.href='/upload'">
+            <img class="user_img" src="/file/img/add.svg">
+        </div>
+        {% endif %}
+
+        <div class="projects">
+            <a class="sub_title" href="/projects">Projects</a>
+
+            {% if pl <= 0 %}
+            <h3 class="non_object" style="margin-top: 10vh;">프로젝트가 없습니다.</h3>
+            {% endif %}
+
+            <ul class="horizontal_list">
+                {% for i in projects %}
+                <li class="horizontal_list">
+                    <div class="projects_item" onclick="location.href='/project/{{int(i[0])}}'">
+                        <img src="{{i[3]}}" onerror="this.src='/file/img/none.png'" />
+                        <p>{{i[1]}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="wiki">
+            <a class="sub_title">Wiki</a>
+            <div class="wiki_sub">
+                <p>ads</p>
+            </div>
+        </div>
+
+        <div class="member">
+            <a class="sub_title">Member</a>
+            <ul class="horizontal_list">
+                {% for i in members %}
+                <li class="horizontal_list">
+                    <div class="members_item" onclick="location.href='/member/{{int(i[0])}}'">
+                        <img src="/file/img/{{i[2]}}" />
+                        <p>{{i[1]}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="timeline">
+            <a class="sub_title">Timeline</a>
+            {% for i in timeline %}
+
+            <div class="timeline_item">
+                <a class="timeline_time">{{int(i[2])}}</a>
+                <a class="timeline_text">{{i[1]}}</a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </body>
+</html>

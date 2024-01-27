@@ -1,0 +1,17 @@
+.projects_item_ {
+    margin: 0;
+    margin-left: 3vw;
+    margin-right: 4vw;
+    width: auto;
+    background-color: rgb(60,55,60);
+    border-radius: 1vw;
+    height: 1.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.projects_item_ p {
+    display: block;
+    width: 100%;
+    text-align:center;
+}

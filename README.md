@@ -59,4 +59,4 @@ Apache-2.0 license
 * 2024/12/09 - Start Develop
 * 2024/01/16 - Complete Develop
 * 2024/01/26 - Mobile Support
-* 2024/01/28 - GitHub Upload
+* 2024/01/27 - GitHub Upload

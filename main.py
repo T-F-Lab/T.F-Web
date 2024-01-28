@@ -25,7 +25,7 @@ cur.execute('create table if not exists edit_team (id real, name text, joined re
 cur.execute('create table if not exists edit_category (id real, target_id text, title text, dec text, time real, author text, edited text,color text)')
 
 app = Flask(__name__)
-app.secret_key = 'Securety Key'
+app.secret_key = 'Secret Key'
 
 @app.route('/file/<path:path>')
 def file(path):

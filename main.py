@@ -132,6 +132,8 @@ def upload_get(get):
         id_ = request.args.get('id')
         category = cur.execute(f'select * from category where id={id_}').fetchone()
         return json.dumps(category)
+    elif get == 'author':
+        pass
 
 @app.route('/upload/<string:type_>', methods=['GET', 'POST'])
 def upload__(type_):

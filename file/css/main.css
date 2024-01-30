@@ -7,11 +7,11 @@ html body {
 input {
     font-family: 'title_light';
 }
-
+/*
 @font-face {
     font-family: 'title_bold';
     src: url('/file/font/Title_Bold.woff') format('woff');
-}
+} */
 
 @font-face {
     font-family: 'title_light';

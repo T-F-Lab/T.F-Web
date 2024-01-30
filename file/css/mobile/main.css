@@ -10,10 +10,11 @@ input {
     font-family: 'title_light';
 }
 
+/*
 @font-face {
     font-family: 'title_bold';
     src: url('/file/font/Title_Bold.woff') format('woff');
-}
+} */
 
 @font-face {
     font-family: 'title_light';
@@ -88,4 +89,12 @@ a {
 a:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+p {
+    font-size: 5vw;
+}
+
+h1 {
+    font-size: 8vw;
 }

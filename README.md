@@ -1,12 +1,10 @@
-# T.F-Web
+# T.F-Web (BETA - Channel)
 
 * * *
 
 ### 개요
 
-서울로봇고등학교의 동아리 T.F Lab의 홈페이지이다.
-
-T.F Lab의 프로젝트들과 부원들, 신입생 모집등 다양한 소식을 손쉽게 알리기 위해 개발되었다.
+서울로봇고등학교의 동아리 T.F Lab의 홈페이지의 개발버전이다.
 
 * T.F Web: http://www.seon06.co.kr | No Open
 * Test Server: http://www.seon06.co.kr:5000 | Random
@@ -37,13 +35,8 @@ main.py을 처음 실행시 data.db파일 생성됨 (SQLite3 | 데이터 베이�
 
 * * * 
 
-### 기능
-
-* 프로젝트 업로드 (글 게시)
-* 팝업 생성 ( 동아리 신규 부원 모집 )
-* 파일 업로드
-* 부원 관리
-* 부원 개인페이지
+### 변경 내역
+* 관리페이지 모바일 지원
 
 * * *
 
@@ -52,11 +45,3 @@ main.py을 처음 실행시 data.db파일 생성됨 (SQLite3 | 데이터 베이�
 Apache-2.0 license
 
 (excluding logo, only code)
-
-* * * 
-### 업데이트 내역
-(y/m/d)
-* 2024/12/09 - Start Develop
-* 2024/01/16 - Complete Develop
-* 2024/01/26 - Mobile Support
-* 2024/01/28 - GitHub Upload

@@ -56,8 +56,9 @@ Apache-2.0 license
 * * * 
 ### 업데이트 내역
 (y/m/d)
-* 2024/12/09 - Start Develop
+* 2023/12/09 - Start Develop
 * 2024/01/16 - Complete Develop
 * 2024/01/26 - Mobile Support
 * 2024/01/27 - GitHub Upload
 * 2024/01/30 - Responsive design applied, Cleaning
+* 2024/02/05 - Management page - mobile support update (BETA)

@@ -91,4 +91,19 @@ a.sub_title {
     display: block;
     margin-top: 10vw;
 }
-a.sub_title
+
+.user {
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+
+    width: 15vw;
+    height: 15vw;
+
+    border-radius: 5vw;
+    background-color: rgba(60, 55, 60, 0.8);
+}
+
+.user img {
+    width: 100%;
+}

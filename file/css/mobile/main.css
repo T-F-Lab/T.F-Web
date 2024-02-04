@@ -90,11 +90,3 @@ a:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
-p {
-    font-size: 5vw;
-}
-
-h1 {
-    font-size: 8vw;
-}

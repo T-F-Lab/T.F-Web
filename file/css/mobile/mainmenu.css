@@ -90,6 +90,7 @@ ul {
 a.sub_title {
     display: block;
     margin-top: 10vw;
+    margin-left: 4vw;
 }
 
 .user {

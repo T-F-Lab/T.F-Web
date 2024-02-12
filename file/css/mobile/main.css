@@ -90,3 +90,8 @@ a:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.non_object {
+    text-align: center;
+    margin-top: 20vh;
+}

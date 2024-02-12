@@ -26,3 +26,6 @@
 .p_time, .p_author {
     color: rgb(150,145,150);
 }
+.p_time{
+    visibility: hidden;
+}

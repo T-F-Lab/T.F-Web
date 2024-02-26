@@ -63,6 +63,8 @@ Apache-2.0 license
 
 (excluding logo, only code)
 
+기여자 BuildTools == seon0313
+
 * * * 
 ### 업데이트 내역
 (y/m/d)

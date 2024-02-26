@@ -108,3 +108,21 @@ a.sub_title {
 .user img {
     width: 100%;
 }
+
+.wellcome {
+    text-align: center;
+    background: linear-gradient(160deg, rgba(180,100,140,0.8) 0%, rgb(125,52,160) 100%);
+    margin-top: 2vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-radius: 5vw;
+}
+
+.wellcome a {
+    background: linear-gradient(160deg, rgba(70,100,255,0.8) 0%, rgb(160,10,125) 100%);
+    box-shadow: 0px 0px 10px rgb(255,255,255);
+    padding: 2vw;
+    border-radius: 2vw;
+}

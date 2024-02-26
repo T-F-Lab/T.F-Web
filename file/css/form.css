@@ -1,0 +1,47 @@
+.form {
+    width: 60vw;
+    margin: auto;
+    background-color: rgb(40,35,40);
+    border-radius: 2vw;
+    padding-top: 1vw;
+}
+
+.form_time_div {
+    width: 60vw;
+    margin: auto;
+    background-color: rgb(40,35,40);
+    margin-bottom: 1vw;
+    border-radius: 2vw;
+}
+
+.form_time_div p {
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.form_title {
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 3vw;
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: rgb(255,255,255);
+}
+
+.form_dec {
+    width: 80%;
+    height: 10vw;
+    margin: 0;
+    margin-left: 10%;
+    padding: 0;
+    margin-top: 1vw;
+    background: none;
+    border: 0;
+    resize: none;
+    color: rgb(255,255,255);
+    font-size: 1.5vw;
+    font-family: 'title_light';
+}

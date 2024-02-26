@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>T.F LAP</title>
+        <title>T.F Lab</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <link type="text/css"  rel="stylesheet" href="/file/css/mobile/main.css" media="only screen and (max-width: 600px)">
         <link type="text/css"  rel="stylesheet" href="/file/css/main.css" media="not screen and (max-width: 600px)">
@@ -18,6 +18,12 @@
             <img class="user_img" src="/file/img/add.svg">
         </div>
         {% endif %}
+
+        <div class="wellcome">
+            <p>T.F Lab 홈페이지에 오신걸 환영합니다!</p>
+            <p>T.F Lab 동아리에 대해 자세히 알고 싶으시면</p>
+            <p><a href="/wellcome">여기</a>를 클릭/터치해 주세요!</p>
+        </div>
 
         <div class="projects">
             <a class="sub_title" href="/projects">Projects</a>
@@ -46,7 +52,7 @@
         </div>
 
         <div class="member">
-            <a class="sub_title">Member</a>
+            <a class="sub_title" href="/member">Member</a>
             <ul class="horizontal_list">
                 {% for i in members %}
                 <li class="horizontal_list">

@@ -1,0 +1,41 @@
+.item {
+    margin-left: 0;
+    margin-right: 2vw;
+    width: auto;
+    height: 15vw;
+    background-color: rgb(40,35,40);
+    padding: 1vw;
+    margin-top: 1vw;
+    border-radius: 3vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    height: 100%;
+    display: inline-block;
+    border-radius: 2vw;
+    width: 20vw;
+}
+
+.name, .time {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40vw;
+}
+
+.name {
+    width: 40vw;
+}
+
+.time {
+    background-color: rgb(80,75,80);
+}
+
+.delete {
+    max-width: 10vw;
+    margin-left: auto;
+    background-color: rgb(180,20,60);
+}

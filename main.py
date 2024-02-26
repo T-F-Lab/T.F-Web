@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, send_file, render_template, request, abort, session
 import sqlite3
 import time
@@ -16,7 +18,7 @@ cur.execute('create table if not exists projects (id real, category real, title 
 cur.execute('create table if not exists timeline (id real, text text, author text, time_text real, time real, edited real)')
 cur.execute('create table if not exists team (id real, name text, joined real, text text, edited text, img text, pw real)')
 cur.execute('create table if not exists admin (id real, joined real)')
-cur.execute('create table if not exists files (id real, type text, name text, link text, author text, time real)')
+cur.execute('create table if not exists files (id text, type text, name text, link text, author text, time real)')
 cur.execute('create table if not exists popup (id real, title text, time real, author text, html text, edited real, end real)')
 cur.execute('create table if not exists category (id real, title text, dec text, time real, author text, edited text,color text)')
 
@@ -89,7 +91,11 @@ def project(id:int):
 
 @app.route('/member')
 def members():
-    return render_template('./members.html')
+    con = sqlite3.connect('./data.db', check_same_thread=False)
+    cur = con.cursor()
+    members_ = cur.execute(f'select id, name, img from team').fetchall()
+    cur.close()
+    return render_template('./members.html', members=members_,int=int)
 
 @app.route('/member/<int:id>')
 def member_(id:int):
@@ -243,6 +249,34 @@ def upload__(type_):
             return render_template('upload_password.html')
         elif type_ == 'files':
             return render_template('upload_files.html')
+        elif type_ == 'manager':
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
+            uploads = cur.execute(f'select * from files where author={session.get('user')}').fetchall()
+            cur.close()
+            con.close()
+            return render_template('upload_manager.html', files = uploads)
+        elif type_ == 'join':
+            return render_template('upload_join.html')
+        elif type_ == 'delete_file':
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
+            id_ = request.args.get('id')
+            #id real, type text, name text, link text, author text, time real
+            var = cur.execute(f'select link, name from files where author={session['user']} and id="{id_}"').fetchone()
+            if var == None:
+                return '<script>alert("존재하지 않는 파일입니다."); location.href="/upload/manager"</script>'
+
+            try: os.remove('.'+var[0])
+            except: pass
+            cur.execute(f'delete from files where author={session['user']} and id="{id_}"')
+            cur.execute(f'update projects set img="/file/img/none.png" where img="{var[0]}"')
+            cur.execute(f'update team set img="/file/img/none.png" where img="{var[0]}"')
+            con.commit()
+            cur.close()
+            con.close()
+
+            return f'<script>alert("{var[1]} 파일을 삭제했습니다."); location.href="/upload/manager"</script>'
 
         else: abort(404)
     elif request.method == 'POST':
@@ -378,6 +412,11 @@ def login():
 def logout():
     session.pop('user',None)
     return '<script>location.href="/"</script>'
+
+
+@app.route('/wellcome')
+def wellcome():
+    return render_template('wellcome.html')
 
 @app.errorhandler(404)
 def error_404(e):

@@ -18,7 +18,6 @@ $(document).ready(function(){
             list.push($(this).text());
         }
     })
-    console.log(list);
     var i;
     for (i=0; i<list.length; i++){
         $.getJSON('/upload/get/author?id='+list[i], function(data) {

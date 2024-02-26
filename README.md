@@ -72,3 +72,4 @@ Apache-2.0 license
 * 2024/01/27 - GitHub Upload
 * 2024/01/30 - Responsive design applied, Cleaning
 * 2024/02/05 - Management page - mobile support update (BETA)
+* 2024/02/27 - Introduction (Wellcome) page (BETA), uploaded file management Update (BETA)

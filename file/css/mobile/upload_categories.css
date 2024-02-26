@@ -1,0 +1,66 @@
+.category_ {
+    margin-left: 0;
+    margin-right: 2vw;
+    margin-top: 2vw;
+    width: auto;
+}
+
+.category_item {
+    height: 8vw;
+    width: 100%;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.category_item p{
+    font-size: 5vw;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.edit {
+    display: none;
+    width: 100%;
+    align-items: center;
+}
+
+.category_item_hover {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    height: 6vw;
+    background-color: rgb(40,35,40);
+    display: flex;
+    align-items: center;
+    border-radius: 2vw;
+    border-bottom-left-radius: 5vw;
+    border-bottom-right-radius: 5vw;
+}
+
+.category_item_hover p, .dec {
+    margin: 0;
+    font-size: 4vw;
+    min-width: 100%;
+    text-align: center;
+}
+
+input {
+    height: 5vw;
+    background: transparent;
+    color: rgb(255,255,255);
+}
+
+input[type="text"] {
+    font-size: 4vw;
+}
+
+.dec {
+    margin: 0;
+    padding: 0;
+}
+
+.submit {
+    text-align: center;
+}

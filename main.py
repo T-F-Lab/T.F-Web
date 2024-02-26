@@ -336,6 +336,7 @@ def upload__(type_):
 
 @app.route('/')
 def main():
+    print(request.headers.get('User-Agent'))
     con = sqlite3.connect('./data.db', check_same_thread=False)
     cur = con.cursor()
     projects = cur.execute('select id, title, author, img, time, edited from projects order by id desc').fetchmany(10)

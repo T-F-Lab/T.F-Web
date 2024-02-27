@@ -20,8 +20,13 @@
     overflow: hidden;
     padding-left: .6em;
     padding-right: .6em;
+    margin-bottom: 1vw;
 }
 
 .load {
     color: transparent;
+}
+
+img {
+    max-width: 100%;
 }

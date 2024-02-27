@@ -1,0 +1,207 @@
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+    min-height: 50%;
+    overflow-y: auto;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.no_file {
+    text-align: center;
+}
+
+#toolbar-container{
+    margin-left: 0vw;
+    margin-right: 2vw;
+    margin-bottom: 1vw;
+    position: sticky;
+    top: 1vw;
+    margin-top: 60vw;
+}
+
+.title_input {
+    border: none;
+    font-size: 7vw;
+    text-align: center;
+    margin: 1vw;
+    background: transparent;
+    color: rgb(255,255,255);
+    width: 96vw;
+}
+
+.project_item {
+    margin-top: 0;
+}
+
+.projects_item {
+    margin-bottom: 2vw;
+}
+
+.image_upload, .image_insert, .category, .project_upload {
+    position: absolute;
+    width: 25vw;
+    text-align: center;
+    left: 1vw;
+    height: 10vw;
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    cursor: pointer;
+}
+.image_insert {
+    margin-top: 12vw;
+}
+.category {
+    margin-top: 24vw;
+}
+.project_upload {
+    margin-top: 36vw;
+}
+.image_upload h3, .image_insert h3, .category h3 {
+    margin: auto;
+}
+.image_uploader, .image_inserter, .category_frame {
+    visibility: hidden;
+    position: absolute;
+    height: auto;
+    left: 25vw;
+}
+
+.image_uploader_in, .image_inserter_in, .category_frame_in{
+    width: auto;
+    height: auto;
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    background-color: rgb(40,35,40);
+    margin-left: 1vw;
+
+    box-shadow: 0vw 0vw 1vw 3px rgb(10,10,10);
+}
+
+.image_uploader:hover {
+    visibility: visible;
+    z-index: 7;
+}
+
+.image_upload:hover ~ .image_uploader{
+    visibility: visible;
+    z-index: 7;
+}
+
+.image_inserter:hover {
+    visibility: visible;
+    z-index: 7;
+}
+
+.image_insert:hover ~ .image_inserter{
+    visibility: visible;
+    z-index: 7;
+}
+
+.category_frame:hover {
+    visibility: visible;
+    z-index: 7;
+}
+
+.category:hover ~ .category_frame{
+    visibility: visible;
+    z-index: 7;
+}
+
+.thumbnail {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 5vw;
+    width: auto;
+    text-align: center;
+    border: 1px solid rgb(55,50,55);
+    border-radius: 1vw;
+    background-color: rgb(85,80,85);
+}
+
+.insert_item {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding-left: 1vw;
+    width: auto;
+    border: 1px solid rgb(60,55,60);
+    border-radius: 2vw;
+    border-bottom-left-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    background-color: rgb(60,55,60);
+    height: 15vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ii_img {
+    max-width: 10vw;
+    height: 13vw;
+    float: left;
+}
+
+.category_ {
+    text-align: center;
+}
+
+.category_ p {
+    border: 1px solid rgb(40,35,40);
+    border-radius: 1vw;
+    margin-top: 50vw;
+    left: 2vw;
+    right: 2vw;
+    background-color: rgb(40,35,40);
+    font-size: 5vw;
+    position: absolute;
+}
+
+.file_drag_drop {
+    width: 30vw;
+    height: 50vw;
+    margin-left: 1vw;
+    display: block;
+    text-align: center;
+    border: 0.5vw dotted rgb(50,45,50);
+    background: transparent;
+    z-index: 8;
+}
+
+.file_list {
+    width: 20vw;
+    height: 50vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(60,55,60);
+}
+
+.listFile_x {
+    float: left;
+    background-color: rgb(255,255,255);
+    border-radius: 1vw;
+    width: 5vw;
+    cursor: pointer;
+}
+
+.listFile p {
+    width: auto;
+    overflow-x: auto;
+}
+
+.dragin {
+    background-color: rgb(45,40,45);
+}
+
+.file_select {
+    width: 10vw;
+    position: absolute;
+    top: 5vw;
+    left: 37vw;
+}
+
+button {
+    display: block;
+    margin-top: 7vw;
+    width: 20vw;
+}

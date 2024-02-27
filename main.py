@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 import uuid
 import json
 import html
+from hash import encodeHash
 
 con = sqlite3.connect('./data.db', check_same_thread=False)
 cur = con.cursor()
@@ -20,6 +21,7 @@ cur.execute('create table if not exists team (id real, name text, joined real, t
 cur.execute('create table if not exists admin (id real, joined real)')
 cur.execute('create table if not exists files (id text, type text, name text, link text, author text, time real)')
 cur.execute('create table if not exists popup (id real, title text, time real, author text, html text, edited real, end real)')
+cur.execute('create table if not exists form (id text, title text, dec text, time real, author text, json text, date real)')
 cur.execute('create table if not exists category (id real, title text, dec text, time real, author text, edited text,color text)')
 
 cur.execute('create table if not exists edit_projects (id real, target_id text, category real, title text, author text, html text, time real, img text, edited text)')
@@ -29,7 +31,7 @@ cur.close()
 con.close()
 
 app = Flask(__name__)
-app.secret_key = 'Secret Key'
+app.secret_key = open('./key.txt', 'rb').readline().decode('utf8')
 
 @app.route('/file/<path:path>')
 def file(path):
@@ -308,11 +310,11 @@ def upload__(type_):
             con.close()
             return ''
         elif type_ == 'password':
-            now = int(request.form.get('now_pw'))
-            pw = int(request.form.get('pw'))
-            re = int(request.form.get('re_pw'))
+            now = encodeHash(request.form.get('now_pw'))
+            pw = encodeHash(request.form.get('pw'))
+            re = encodeHash(request.form.get('re_pw'))
 
-            user = int(cur.execute(f'select pw from team where id={session.get('user')}').fetchone()[0])
+            user = cur.execute(f'select pw from team where id={session.get('user')}').fetchone()[0]
             cur.close()
             con.close()
             if user != None:
@@ -320,7 +322,7 @@ def upload__(type_):
                     if pw == re:
                         con = sqlite3.connect('./data.db', check_same_thread=False)
                         cur = con.cursor()
-                        cur.execute(f'update team set pw={pw} where id={session.get('user')}')
+                        cur.execute(f'update team set pw="{pw}" where id={session.get('user')}')
                         con.commit()
                         session.pop('user',None)
                         cur.close()
@@ -396,7 +398,7 @@ def login():
         return render_template('login.html')
     elif request.method == 'POST':
         id_ = request.form.get('id')
-        pw_ = request.form.get('pw')
+        pw_ = encodeHash(request.form.get('pw'))
         con = sqlite3.connect('./data.db', check_same_thread=False)
         cur = con.cursor()
         _id = cur.execute(f'select id from team where name="{id_}" and pw="{pw_}"').fetchone()

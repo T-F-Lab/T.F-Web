@@ -26,3 +26,7 @@
 .load {
     color: transparent;
 }
+
+img {
+    max-width: 100%;
+}

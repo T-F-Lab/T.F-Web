@@ -6,19 +6,6 @@
     padding-top: 1vw;
 }
 
-.form_time_div {
-    width: 60vw;
-    margin: auto;
-    background-color: rgb(40,35,40);
-    margin-bottom: 1vw;
-    border-radius: 2vw;
-}
-
-.form_time_div p {
-    display: inline-block;
-    margin-left: 1vw;
-}
-
 .form_title {
     background: none;
     border: 0;

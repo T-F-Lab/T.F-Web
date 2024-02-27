@@ -104,11 +104,11 @@ a:hover {
     padding-bottom: 1vw;
     width: 100%;
     background-color: rgb(40,35,40);
-    text-align: center;
     border-radius: 2vw;
 }
 
 .bottom_bar p {
+    text-align: center;
     margin: 0;
 }
 

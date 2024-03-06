@@ -1,4 +1,4 @@
-# T.F-Web (BETA - Channel)
+# T.F-Web
 
 * * *
 

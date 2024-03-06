@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>{{member[1]}} - T.F LAP</title>
+        <title>{{member[1]}} - T.F Lab</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <link type="text/css"  rel="stylesheet" href="/file/css/mobile/main.css" media="only screen and (max-width: 600px)">
@@ -19,9 +19,9 @@
 
         <div class="panel">
             <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/member">Member</a> <a>></a> <a style="margin:0" class="sub_title" href="/member/{{int(member[0])}}">{{member[1]}}</a>
-            <br>
+
             <div class="member">
-                <img class="main_img" src="/file/img/{{member[5]}}" />
+                <img class="main_img" src="/file/img/{{member[5]}}" onerror="this.src='/file/img/none.png'"/>
                 <div class="member_title">
                     <h1 class="member_title_h">{{member[1]}}</h1>
                     <hr>
@@ -31,7 +31,7 @@
                 </div>
 
             </div>
-            <br>
+
             <a class="sub_title">Projects</a>
 
         </div>

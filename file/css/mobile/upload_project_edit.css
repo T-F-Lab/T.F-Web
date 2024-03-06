@@ -1,0 +1,20 @@
+.projects_item_ {
+    height: 7vw;
+    margin:0;
+    margin-left: 0;
+    margin-right: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 5vw;
+    width: auto;
+    background-color: rgb(60,55,60);
+    align-items: center;
+    display: flex;
+    border-radius: 2vw;
+}
+
+.projects_item_ p {
+    margin: 0;
+    font-size: 5vw;
+    text-align: center;
+    width: 100%;
+}

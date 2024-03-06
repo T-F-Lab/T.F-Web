@@ -111,3 +111,26 @@ hr {
     background-image:
         linear-gradient( 90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 70% ),
 }
+
+.bottom_bar {
+    margin:0;
+    padding: 0;
+    margin-top: 8vw;
+    margin-left: 0;
+    margin-right: 2vw;
+    width: 100%;
+    background-color: rgb(40,35,40);
+    border-radius: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.bottom_bar p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.bottom_bar a {
+    font-style: italic;
+}

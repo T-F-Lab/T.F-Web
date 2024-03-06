@@ -65,6 +65,7 @@
 .p_time {
     display: inline-block;
     width: 5vw;
+    visibility: hidden;
 }
 
 .p_title {

@@ -1,0 +1,16 @@
+.item {
+    height: 10vw;
+    background-color: rgb(40,35,40);
+    margin-top: 1vw;
+    width: calc(96vw/3);
+    display: inline-block;
+}
+
+.item img {
+    height: 100%;
+    display: inline-block;
+}
+
+.item p {
+    display: inline-block;
+}

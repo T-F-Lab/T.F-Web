@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>Upload Member - T.F LAP</title>
+        <title>Upload Member - T.F Lab</title>
 
-        <link type="text/css" rel="stylesheet" href="/file/css/main.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link type="text/css"  rel="stylesheet" href="/file/css/mobile/main.css" media="only screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/main.css" media="not screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/mobile/upload_member.css" media="only screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/upload_member.css" media="not screen and (max-width: 600px)">
     </head>
     <body>
         <img class="logo" src="/file/img/tf_dot_text_logo.svg">
@@ -13,19 +17,17 @@
         <div class="panel">
             <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload">Upload</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload/member">Member</a>
 
-            <div class="login_form">
+            <div class="item">
+                <form method="post" action="/upload/member">
+                    <!-- , name text, text text  -->
+                    <input type="text" placeholder="이름" name="name" id="name"/>
+                    <input type="text" placeholder="설명" name="text" id="text"/>
 
-                <h2 id="login_title">Member</h2>
-
-                <form method="post" action="/login">
-                    <input type="text" placeholder="ID" name="id" id="id"/> <br>
-                    <input type="password" placeholder="PW" name="pw" id="pw"/> <br>
-
-                    <br>
-
-                    <input class="login_submit" type="submit" value="Login">
+                    <input class="submit" type="submit" value="등록">
                 </form>
             </div>
+
+
 
         </div>
     </body>

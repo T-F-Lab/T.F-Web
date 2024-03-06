@@ -91,10 +91,27 @@ a:hover {
     text-decoration: underline;
 }
 
-p {
-    font-size: 5vw;
+.non_object {
+    text-align: center;
+    margin-top: 20vh;
 }
 
-h1 {
-    font-size: 8vw;
+.bottom_bar {
+    margin-top: 8vw;
+    margin-left: 0;
+    margin-right: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 100%;
+    background-color: rgb(40,35,40);
+    border-radius: 2vw;
+}
+
+.bottom_bar p {
+    text-align: center;
+    margin: 0;
+}
+
+.bottom_bar a {
+    font-style: italic;
 }

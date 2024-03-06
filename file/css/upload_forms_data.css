@@ -1,0 +1,27 @@
+.hidden {display: none;}
+
+.form_index {
+    margin-left: 18.5vw;
+    margin-top: 1vw;
+    padding: .5vw;
+    border-radius: 2vw;
+    background-color: rgb(40,35,40);
+    display: inline-block;
+    text-align: center;
+}
+
+.form_index p, .form_index button {
+    display: inline-block;
+    margin: auto;
+    border: 0;
+    background: 0;
+    color: rgb(255,255,255);
+}
+
+.form_index button {
+    background-color: rgb(30,25,30);
+    padding: 1vw;
+    border-radius: 2vw;
+    margin: auto;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.item{
+    margin-left: 0vw;
+    margin-right: 2vw;
+    margin-bottom: 3vw;
+    width: auto;
+    background-color: rgb(40,35,40);
+    padding: 1vw;
+    border-radius: 5vw;
+}
+
+.item h2 {
+    margin: 0;
+    margin-top: 2vw;
+    text-align: center;
+}
+
+div.button {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 2vw;
+    width: auto;
+    height: 10vw;
+    background-color: rgb(30,25,30);
+    border-radius: 7.5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sub_title{
+    margin-bottom: 2vw;
+}

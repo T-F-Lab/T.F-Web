@@ -24,9 +24,8 @@ function upload(data){
     }) .done((data) => {
         alert('업로드 완료');
     }) .fail((e) => {
-        alert('업로드 오류\n'+e);
+        alert('업로드 실패\n'+e);
     }) .always(()=>{
-        console.log('always');
     });
 }
 

@@ -3,7 +3,7 @@
     width: auto;
     margin-top: 2vw;
     background-color: rgb(40,35,40);
-    padding: 1vw;
+    padding: 2vw;
     border-radius: 3vw;
 }
 
@@ -25,4 +25,7 @@
 
 .p_time, .p_author {
     color: rgb(150,145,150);
+}
+.p_time{
+    visibility: hidden;
 }

@@ -1,0 +1,262 @@
+.day_text p {
+    margin: 0;
+    padding: 0;
+}
+
+.add {
+    background-color: rgb(40,35,40);
+    width: 13vw;
+    border-radius: 6.5vw;
+    margin-right: 2vw;
+    margin-left: auto;
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+}
+.add img {
+    width: 100%;
+    margin: 0;
+    margin: auto;
+}
+
+.item {
+    width: auto;
+    margin-left: 0;
+    margin-right: 2vw;
+    margin-top: 5vw;
+    padding-bottom: 1vw;
+    border-radius: 2vw;
+    background-color: rgb(40,35,40);
+
+    animation-name: fade;
+    animation-duration: 0.3s;
+    animation-direction: leaner;
+}
+
+input {
+    color: rgb(255,255,255);
+    font-family: 'title_light';
+}
+
+.item textarea {
+    width: 90%;
+    display: block;
+    margin: auto;
+    resize: none;
+    color: rgb(255,255,255);
+    font-family: 'title_light';
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid rgb(255,255,255);
+    border-radius: 0;
+    height: 10vw;
+}
+
+.item hr {
+    width: 80%;
+    padding: 0;
+    margin: auto;
+    border: 1px solid rgb(100,100,100);
+    color: rgb(100,100,100);
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+}
+
+.copy, .delete {
+    display: inline-block;
+}
+
+.input_q {
+    background: 0;
+    border: 0;
+    margin: 0;
+    margin-top: 1vw;
+    width: 50vw;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+    padding: .5vw;
+    padding-left: 1vw;
+    font-size: 5vw;
+    height: 7vw;
+    background-color: rgb(30,25,30);
+    border-radius: 2vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.type {
+    background: 0;
+    border: 0;
+    padding: 0;
+    background-color: rgb(90,85,90);
+    height: 8vw;
+    margin-top: -0.5vw;
+    border-radius: 1vw;
+    font-family: 'title_light';
+    font-size: 3vw;
+    margin-left: 1vw;
+    display: inline-block;
+    margin-top: 1vw;
+    vertical-align: top;
+    color: rgb(255,255,255);
+}
+
+.type option {
+    background: 0;
+    border: 0;
+    background-color: rgb(90,85,90);
+}
+
+.add_item {
+    width: auto;
+    margin-top: 5vw;
+    display: flex;
+    background: rgb(30,25,30);
+    border-radius: 1vw;
+    font-size: 5vw;
+    align-items: center;
+}
+
+.add_item p {
+    margin: 0;
+    padding: 2vw;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.q_ui {
+    background-color: rgb(60,55,60);
+    padding: 1vw;
+    width: auto;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 2vw;
+    margin-bottom: 3vw;
+}
+
+
+.q_item {
+    display: flex;
+    align-items: center;
+    height: 10vw;
+    border-radius: 2vw;
+    background-color: rgb(45,40,45);
+    margin-bottom: 1vw;
+    padding-left: 1vw;
+
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-direction: leaner;
+}
+.q_text {
+    background: 0;
+    margin: 0;
+    border: 0;
+    font-size: 6vw;
+    width: 100%;
+}
+
+.form_time_div {
+    width: auto;
+    margin-left: 0;
+    margin-right: 2vw;
+    background-color: rgb(40,35,40);
+    margin-bottom: 5vw;
+    border-radius: 2vw;
+    margin-top: 3vw;
+    position: sticky;
+    top: 1vw;
+    height: 8vw;
+    box-shadow: 0 0 .5vw 2vw rgb(0,0,0);
+    padding-left: 1vw;
+    font-size: 6vw;
+}
+
+.form_time_div p {
+    display: inline-block;
+    margin-top: 1vw;
+}
+
+.form_time {
+    background: 0;
+    border: 0;
+    width: 3em;
+    display: inline-block;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    font-size: 6vw;
+    border-bottom: 1px solid rgb(255,255,255);
+    border-radius: 0;
+}
+
+.submit {
+    float: right;
+    height: 7vw;
+    margin-top: .5vw;
+    margin-right: .5vw;
+    border-radius: 2vw;
+    border: 0;
+    background: 0;
+    background-color: rgb(30,25,30);
+    color: rgb(255,255,255);
+    font-family: 'title_light';
+    cursor: pointer;
+    font-size: 4vw;
+}
+
+.delete_q, .copy, .delete {
+    cursor: pointer;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.most {
+    margin-left: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: rgb(20,15,20);
+    width: 15vw;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.most input {
+    width: auto;
+    margin-right: auto;
+    height: 5vw;
+    font-size: 5vw;
+}
+.most label {
+    margin-left: auto;
+}
+
+.copy, .delete {
+    height: 8vw;
+    width: 8vw;
+    padding-left: 1vw;
+    margin: auto;
+    margin-top: 1vw;
+    vertical-align: top;
+}
+.delete {padding-left: 1vw;}
+.copy img, .delete img {
+    height: 100%;
+    background-color: rgb(180,175,180);
+    border-radius: .5vw;
+}
+.delete img {background-color: rgb(180,20,60);}
+
+.intput_dec {
+    font-size: 4vw;
+}

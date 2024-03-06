@@ -17,7 +17,7 @@ $('.add').click(function(){
     div += '<div class="q_list">'
     div += '<div class="q_item"> <input class="q_type" type="checkbox" disabled> <input class="q_text" value="옵션1"><img class="delete_q" onclick="delete_q(this);" src="/file/img/close_x.svg"></div>'
     div += '</div>';
-    div += '<div class="add_item"><input type="checkbox" disabled><label>옵션추가</label></div></div>'
+    div += '<div class="add_item"><p>옵션추가</p></div></div>'
     div += '<div class="most"><label>필수</label><input type="checkbox"></div>';
     div += '</div>';
     $('.items').append(div);
@@ -50,7 +50,6 @@ function delete_q(e){
 }
 
 function change_type(e){
-    console.log(e.value);
     if (['text', 'long'].includes(e.value)) {
 
         e.parentNode.querySelector('.add_item').style.visibility = "hidden";
@@ -90,7 +89,6 @@ function change_type(e){
         for (var i =0; i<s.length; i++) {
             s[i].type = e.value;
         }
-        e.parentNode.querySelector('.add_item').firstChild.type = e.value;
     }
 }
 
@@ -102,6 +100,7 @@ $('.submit').click(function(){
         $('.items').find('.item').each(function(){
             var ob = new Object();
             ob.title = $(this).find('.input_q').val();
+            ob.dec = $(this).find('.intput_dec').val();
             ob.type = $(this).find('.type').val();
             ob.most = $(this).find('.most').children('input').is(':checked');
             var options = [];
@@ -111,12 +110,26 @@ $('.submit').click(function(){
             }
             ob.options = options;
 
-            result.push(JSON.stringify(ob));
+            result.push(ob);
         });
 
-        console.log(JSON.stringify(result));
+        var ob = new Object();
+        ob.title = $('.form_title').val();
+        ob.dec = $('.form_dec').val();
+        ob.time = $('.form_time').val();
+        ob.items = result;
+
+        $.ajax({
+            type: 'POST',
+            url: '/upload/forms',
+            data: JSON.stringify(ob),
+            contentType: 'application/json',
+        }) .done((data) => {
+            alert('업로드 완료');
+        }) .fail((e) => {
+            alert('업로드 실패\n'+e);
+        }) .always(()=>{
+        });
     }else{
     }
-
-
 });

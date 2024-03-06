@@ -11,6 +11,9 @@
     margin-left: auto;
     margin-top: 1vw;
 }
+
+.form_dec {min-height: 10vw;}
+
 .add img {
     width: 100%;
     margin: auto;
@@ -99,11 +102,22 @@ input {
 .add_item {
     width: 55vw;
     margin: auto;
-    display: flex;
     background: rgb(30,25,30);
     border-radius: 1vw;
-    height: 3vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
     align-items: center;
+    padding: 0;
+}
+
+.add_item p {
+    margin: 0;
+    padding: 1vw;
+    display: block;
+    width: 100%;
+
 }
 
 .q_ui {
@@ -229,3 +243,8 @@ input {
     border-radius: .5vw;
 }
 .delete img {background-color: rgb(180,20,60);}
+
+.intput_dec {
+    font-size: 1.5vw;
+    height: 6vw;
+}

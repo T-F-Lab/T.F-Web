@@ -113,8 +113,16 @@ input {
     display: flex;
     background: rgb(30,25,30);
     border-radius: 1vw;
-    height: 8vw;
+    font-size: 5vw;
     align-items: center;
+}
+
+.add_item p {
+    margin: 0;
+    padding: 2vw;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .q_ui {
@@ -156,7 +164,7 @@ input {
     background-color: rgb(40,35,40);
     margin-bottom: 5vw;
     border-radius: 2vw;
-    margin-top: 1vw;
+    margin-top: 3vw;
     position: sticky;
     top: 1vw;
     height: 8vw;
@@ -195,6 +203,7 @@ input {
     color: rgb(255,255,255);
     font-family: 'title_light';
     cursor: pointer;
+    font-size: 4vw;
 }
 
 .delete_q, .copy, .delete {

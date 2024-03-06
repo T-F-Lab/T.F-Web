@@ -21,7 +21,8 @@ cur.execute('create table if not exists team (id real, name text, joined real, t
 cur.execute('create table if not exists admin (id real, joined real)')
 cur.execute('create table if not exists files (id text, type text, name text, link text, author text, time real)')
 cur.execute('create table if not exists popup (id real, title text, time real, author text, html text, edited real, end real)')
-cur.execute('create table if not exists form (id text, title text, dec text, time real, author text, json text, date real)')
+cur.execute('create table if not exists forms (id text, title text, dec text, time real, author text, json text, date real)')
+cur.execute('create table if not exists forms_data (id text, target text, json text, time real, author text, ip text)')
 cur.execute('create table if not exists category (id real, title text, dec text, time real, author text, edited text,color text)')
 
 cur.execute('create table if not exists edit_projects (id real, target_id text, category real, title text, author text, html text, time real, img text, edited text)')
@@ -182,13 +183,29 @@ def upload_get(get):
         con.close()
         return json.dumps(data)
     else:
-        if session.get('user') == None: abort(404)
+        if session.get('user') == None:
+            cur.close()
+            con.close()
+            abort(404)
         if get == 'files':
             files = cur.execute(f'select * from files where author={session.get('user')}').fetchall()
             cur.close()
             con.close()
             return json.dumps(files)
-        else: abort(404)
+        elif get == 'forms':
+            id = request.args.get('id')
+            #cur.execute('create table if not exists forms_data (id text, target text, json text, time real, author text, ip text)')
+            data = cur.execute(f'select * from forms_data where target="{id}"').fetchall()
+            forms = cur.execute(f'select * from forms where id="{id}"').fetchone()
+            cur.close()
+            con.close()
+            if request.method == 'post': return json.dumps(data)
+            else:
+                return render_template('upload_forms_data.html', data=data, forms=forms, un = html.unescape, load=json.loads, e=enumerate, s=str)
+        else:
+            cur.close()
+            con.close()
+            abort(404)
 
 @app.route('/upload/<string:type_>', methods=['GET', 'POST'])
 def upload__(type_):
@@ -258,8 +275,8 @@ def upload__(type_):
             cur.close()
             con.close()
             return render_template('upload_manager.html', files = uploads)
-        elif type_ == 'join':
-            return render_template('upload_join.html')
+        elif type_ == 'forms':
+            return render_template('upload_forms.html')
         elif type_ == 'delete_file':
             con = sqlite3.connect('./data.db', check_same_thread=False)
             cur = con.cursor()
@@ -279,12 +296,19 @@ def upload__(type_):
             con.close()
 
             return f'<script>alert("{var[1]} 파일을 삭제했습니다."); location.href="/upload/manager"</script>'
+        elif type_ == 'manager_forms':
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
+            forms = cur.execute(f'select id, title, time, date from forms where author="{session.get("user")}"').fetchall()
+            cur.close()
+            con.close()
+            return render_template('manager_forms.html',forms=forms)
 
         else: abort(404)
     elif request.method == 'POST':
-        con = sqlite3.connect('./data.db', check_same_thread=False)
-        cur = con.cursor()
         if type_ == 'project':
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
             data = request.json
             title = data['title']
             html_ = html.escape(str(data['html']))
@@ -310,6 +334,8 @@ def upload__(type_):
             con.close()
             return ''
         elif type_ == 'password':
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
             now = encodeHash(request.form.get('now_pw'))
             pw = encodeHash(request.form.get('pw'))
             re = encodeHash(request.form.get('re_pw'))
@@ -334,6 +360,8 @@ def upload__(type_):
         elif type_ == 'categories':
 
             print(request.json)
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
             data = request.json
             edit = data['edit']
             title = data['title']
@@ -353,10 +381,14 @@ def upload__(type_):
                     f'insert into edit_category values ("{id_}", {edit}, "{title_}", "{dec_}", {time.time()}, {author_}, "{edited_}", "{color_}")')
                 cur.execute(f'update category set title="{title}",dec="{dec}",color="{color}",edited="{id_}" where id={edit}')
                 con.commit()
+                cur.close()
+                con.close()
 
                 return 'UPDATE'
         elif type_ == 'member':
             #id real, name text, joined real, text text, edited text, img text, pw real
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
             name = request.form.get('name')
             text = request.form.get('text')
             id_ = cur.execute("SELECT COUNT() FROM team").fetchone()[0]+1
@@ -365,10 +397,43 @@ def upload__(type_):
             cur.close()
             con.close()
             return f'<script>location.href="/member/{id_}";</script>'
+        elif type_ == 'forms':
+            data = request.json
+            #create table if not exists forms (id text, title text, dec text, time real, author text, json text, date real
+            con = sqlite3.connect('./data.db', check_same_thread=False)
+            cur = con.cursor()
+            cur.execute(f'insert into forms values ("{str(uuid.uuid4())}", "{data["title"]}", "{data["dec"]}", {time.time()}, "{session["user"]}", "{html.escape(json.dumps(data["items"]))}", {data["time"]} )')
+            con.commit()
+            cur.close()
+            con.close()
+            return f'<script>location.href="/";</script>'
 
         else: abort(404)
 
     else: abort(404)
+
+@app.route('/forms/<uuid:uu_>', methods=['GET', 'POST'])
+def forms_view(uu_):
+    if request.method == 'GET':
+        con = sqlite3.connect('./data.db', check_same_thread=False)
+        cur = con.cursor()
+        a = cur.execute(f'select * from forms where id="{uu_}"').fetchone()
+        if a == None: abort(404)
+        cur.close()
+        con.close()
+        data = html.unescape(a[5])
+        data = json.loads(data)
+        return render_template('forms_viewer.html', form=a[:5]+(a[6],), data=data, enumerate=enumerate)
+    else:
+        con = sqlite3.connect('./data.db', check_same_thread=False)
+        cur = con.cursor()
+        #forms_data (id text, target text, json text, time real, author text, ip text)
+        cur.execute(f'insert into forms_data values ("{str(uuid.uuid4())}", "{uu_}", "{html.escape(json.dumps(request.json))}", {time.time()}, "{session.get("user")}", "{request.remote_addr}")')
+        con.commit()
+        cur.close()
+        con.close()
+        print(request.json, request.remote_addr)
+        return '.'
 
 @app.route('/')
 def main():

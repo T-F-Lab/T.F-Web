@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>모집 공고 작성 - T.F Lab</title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link type="text/css"  rel="stylesheet" href="/file/css/mobile/main.css" media="only screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/main.css" media="not screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/mobile/form.css" media="only screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/form.css" media="not screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/mobile/upload_forms_data.css" media="only screen and (max-width: 600px)">
+        <link type="text/css"  rel="stylesheet" href="/file/css/upload_forms_data.css" media="not screen and (max-width: 600px)">
+    </head>
+    <body>
+        <img class="logo" src="/file/img/tf_dot_text_logo.svg">
+        <hr/>
+        <a class="login" href="/sign-in">Sign - in</a>
+
+        <div class="panel">
+            <a class="sub_title" href="/">HOME</a> <a>></a> <a style="margin:0" class="sub_title" href="/upload">Upload</a> <a>></a> <a style="margin:0" class="sub_title" href="">Manager Forms</a>
+            <div class="form">
+                <h1 class="form_title">{{forms[1]}}</h1>
+                <hr>
+                <p class="form_dec">{{forms[2]}}</p>
+            </div>
+
+            <div class="form_index">
+                <button class="minus">-</button>
+                <p class="form_index_p">0/0</p>
+                <button class="plus">+</button>
+            </div>
+
+            <div class="forms">
+                {% for ii, i in e(data) %}
+                <div class="f {%if not ii<=0 %}hidden{% endif %}" id="{{ii}}">
+                    <div class="items">
+                        {{i[3], i[4], i[5]}}
+                        {% for index, n in e(load(un(forms[5]))) %}
+                        <div class="form_">
+                            <h2>{{n['title']}}</h2>
+                            {% if n['most'] %}
+                            <div class="most_box"><p>필수 답변</p></div>
+                            {% endif %}
+                            {% for l in n['options'] %}
+                            <div class="option">
+                            {% if n['type'] != 'long' %}<input name="{{s(index)}}-{{i[0]}}" onclick="return false;" placeholder="답변이 없습니다." readonly type="{{n['type']}}" {% if n['type']=='text' %} value="{{load(un(i[2]))[s(index)][0]}}" {% endif %} {%if l in load(un(i[2]))[s(index)]%}checked="checked"{%endif%}>
+                            {% else %}
+                                <textarea readonly name="{{index}}" placeholder="답변이 없습니다.">{{load(un(i[2]))[s(index)][0]}}</textarea>
+                            {% endif %}
+                            {% if l != None and l!='None' and l != 'null' %}
+                            <label>{{l}}</label>
+                            {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <script src="/file/js/upload_forms_data.js"></script>
+    </body>
+</html>

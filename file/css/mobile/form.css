@@ -5,6 +5,7 @@
     background-color: rgb(40,35,40);
     border-radius: 2vw;
     padding-top: 1vw;
+    padding-bottom: 2vw;
     margin-top: 2vw;1111
 }
 
@@ -33,6 +34,8 @@
     color: rgb(255,255,255);
     font-size: 5vw;
     font-family: 'title_light';
+    white-space: pre-line;
+    display: inline-block;
 }
 
 .form_ {
@@ -73,6 +76,9 @@
     margin-left: 2vw;
     margin-right: 1vw;
     width: auto;
+    white-space: pre-line;
+    display: block;
+    margin-top: 2vw;
 }
 
 .option {

@@ -201,7 +201,7 @@ def upload_get(get):
             con.close()
             if request.method == 'post': return json.dumps(data)
             else:
-                return render_template('upload_forms_data.html', data=data, forms=forms, un = html.unescape, load=json.loads, e=enumerate, s=str)
+                return render_template('upload_forms_data.html', data=data, forms=forms, un = html.unescape, load=json.loads, e=enumerate, s=str, d = dataReturn)
         else:
             cur.close()
             con.close()
@@ -411,7 +411,9 @@ def upload__(type_):
         else: abort(404)
 
     else: abort(404)
-
+def dataReturn(v):
+    if len(v) <= 0: return ['']
+    return v
 @app.route('/forms/<uuid:uu_>', methods=['GET', 'POST'])
 def forms_view(uu_):
     if request.method == 'GET':
@@ -423,7 +425,7 @@ def forms_view(uu_):
         con.close()
         data = html.unescape(a[5])
         data = json.loads(data)
-        return render_template('forms_viewer.html', form=a[:5]+(a[6],), data=data, enumerate=enumerate)
+        return render_template('forms_viewer.html', form=a[:5]+(a[6],), data=data, enumerate=enumerate, d=dataReturn)
     else:
         con = sqlite3.connect('./data.db', check_same_thread=False)
         cur = con.cursor()

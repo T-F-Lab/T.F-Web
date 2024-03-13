@@ -65,3 +65,16 @@
     display: block;
     height: 12vw;
 }
+
+.data {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: .5vw;
+    border-radius: 2vw;
+    background-color: rgb(30,25,30);
+}
+
+.data a {
+    display: block;
+}

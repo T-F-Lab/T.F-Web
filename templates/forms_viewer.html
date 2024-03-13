@@ -21,7 +21,7 @@
             <div class="form">
                 <h1 class="form_title">{{form[1]}}</h1>
                 <hr>
-                <p class="form_dec">{{form[2]}}</p>
+                <span class="form_dec">{{form[2]}}</span>
 
             </div>
 
@@ -32,10 +32,10 @@
                     {% if i['most'] %}
                     <div class="most_box"><p>필수 답변</p></div>
                     {% endif %}
-                    <p class="dec">{{i['dec']}}</p>
-                    {% for l in i['options'] %}
+                    <span class="dec">{{i['dec']}}</span>
+                    {% for l in d(i['options']) %}
                     <div class="option">
-                    {% if i['type'] != 'long' %}<input name="{{index}}" placeholder="답변을 입력해 주세요." type="{{i['type']}}" {% if i['type']!='text' %}value="{{l}}">{%else%}>{%endif%}
+                    {% if i['type'] != 'long' %}<input name="{{index}}" placeholder="답변을 입력해 주세요." type="{{i['type']}}" {% if i['type']!='text' %}value="{{l}}" {%endif%}>
                     {% else %}
                         <textarea name="{{index}}" placeholder="답변을 입력해 주세요."></textarea>
                     {% endif %}

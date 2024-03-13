@@ -23,7 +23,7 @@
                     <h2 onclick="location.href='/forms/{{i[0]}}';">{{i[1]}}</h2>
                     <p onclick="location.href='/forms/{{i[0]}}';">{{i[2]}}</p>
                     <img class="share" src="/file/img/share.svg" data-id="{{i[0]}}">
-                    <div class="data"><p><a href="/upload/get/forms?id={{i[0]}}">데이터 보기</a></p></div>
+                    <div class="data" onclick="location.href='/upload/get/forms?id={{i[0]}}'"><p><a href="/upload/get/forms?id={{i[0]}}">데이터 보기</a></p></div>
                 </div>
                 {% endfor %}
             </div>

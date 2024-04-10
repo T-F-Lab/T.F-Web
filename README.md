@@ -4,7 +4,7 @@
 
 ### 개요
 
-서울로봇고등학교의 동아리 T.F Lab의 홈페이지의 개발버전이다.
+서울로봇고등학교의 미인정 동아리 T.F Lab의 홈페이지의 개발버전이다.
 
 * T.F Web: http://www.seon06.co.kr | No Open
 * Test Server: http://www.seon06.co.kr:5000 | Random
